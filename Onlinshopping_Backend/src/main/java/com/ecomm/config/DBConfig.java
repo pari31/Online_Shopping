@@ -61,7 +61,7 @@ public class DBConfig {
 	private Properties getHibernateProperties() {
 		Properties prop = new Properties();
 		prop.put("hibernate.dialect", DB_DIALECT);
-		prop.put("hibernate.hbm2ddl.auto", "update");
+		prop.put("hibernate.hbm2ddl.auto", "update"); //create ,create-drop,update,validate
 		prop.put("hibernate.show_sql", "true");
 		prop.put("hibernate.format_sql", "true");
 

@@ -11,15 +11,6 @@ public class ProductDTO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ProductId;
-	//@NotBlank(message="Please enter the product name!")
-	private String ProductName;
-	//@NotBlank(message="Please enter the product brand!")	
-	private String PoductBarand;
-	//@NotBlank(message="Please enter the product description!")
-	private String ProductDescription;
-	//@Column (name="unit_price")
-	//@Min(value=1, message="The unit price cannot be less than 1!")
-	private double UnitPrice;
 	public int getProductId() {
 		return ProductId;
 	}
@@ -32,11 +23,11 @@ public class ProductDTO {
 	public void setProductName(String productName) {
 		ProductName = productName;
 	}
-	public String getPoductBarand() {
-		return PoductBarand;
+	public String getPoductBrand() {
+		return ProductBrand;
 	}
-	public void setPoductBarand(String poductBarand) {
-		PoductBarand = poductBarand;
+	public void setPoductBrand(String poductBrand) {
+		ProductBrand = poductBrand;
 	}
 	public String getProductDescription() {
 		return ProductDescription;
@@ -50,14 +41,16 @@ public class ProductDTO {
 	public void setUnitPrice(double unitPrice) {
 		UnitPrice = unitPrice;
 	}
-	public int getProductQuatity() {
-		return ProductQuatity;
+	public int getProductQuantity() {
+		return ProductQuantity;
 	}
-	public void setProductQuatity(int productQuatity) {
-		ProductQuatity = productQuatity;
+	public void setProductQuantity(int productQuantity) {
+		ProductQuantity = productQuantity;
 	}
-	private int ProductQuatity;
+	private String ProductName;
+	private String ProductBrand;
+	private String ProductDescription;
+	private double UnitPrice;
+	private int ProductQuantity;
 	
-	
-
 }

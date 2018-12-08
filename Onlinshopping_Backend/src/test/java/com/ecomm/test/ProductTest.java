@@ -13,7 +13,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.ecomm.DAO.ProductDAO;
 import com.ecomm.DTO.ProductDTO;
 
-public class ProductDAOTest {
+public class ProductTest {
 
 	static ProductDAO productDAO;
 
@@ -35,10 +35,10 @@ public class ProductDAOTest {
 	public void addProductTest() {
 		ProductDTO product = new ProductDTO();
 		product.setProductName("Honor 9N");
-		product.setPoductBarand("Honor");
+		product.setPoductBrand("Honor");
 		product.setProductDescription("Honor 9N 4G.B.RAM and 128 G.B. Rom");
 		product.setUnitPrice(15000);
-		product.setProductQuatity(5);
+		product.setProductQuantity(5);
 		assertTrue("Failed to add product !", productDAO.add(product));
 	}
 
@@ -55,11 +55,11 @@ public class ProductDAOTest {
 	@Test
 	public void updateProductTest() {
 		ProductDTO product = productDAO.getProduct(3);
-		product.setProductName("Samsung 8");
-		product.setPoductBarand("Samsung");
-		product.setProductDescription("Samsung 8 4G.B.RAM and 128 G.B. Rom");
-		product.setUnitPrice(55000);
-		product.setProductQuatity(2);
+		product.setProductName("MI 5Note");
+		product.setPoductBrand("Xaomi");
+		product.setProductDescription("MI 5Note 4G.B.RAM and 128 G.B. Rom");
+		product.setUnitPrice(15000);
+		product.setProductQuantity(2);
 		assertTrue("Failed updated  the product!", productDAO.update(product));
 	}
 
@@ -70,12 +70,13 @@ public class ProductDAOTest {
 		List<ProductDTO> list = productDAO.listProducts();
 		assertEquals("Failed to get list!", 2, list.size());
 	}
-
-	/* Fetching the Active Product List from the table */
-	// @Ignore
+/*Fetching single product from the product table*/
+	//@Ignore
 	@Test
-	public void testListActiveProducts() {
-		assertEquals("Successfully fetched the Active Product List from the table!", 1,
-				productDAO.listProducts().size());
+	public void testget()
+	{
+		ProductDTO product = productDAO.getProduct(1);
+		assertEquals("Successfully fetched a single product from the table!","Honor 9N",product.getProductName());
 	}
+
 }

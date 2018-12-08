@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ecomm.DAO.SupplierDAO;
 import com.ecomm.DTO.SupplierDTO;
-@Repository("supplerDAO")
+@Repository("supplierDAO")
 @Transactional
 public class SupplierDAOIMPL implements SupplierDAO {
 

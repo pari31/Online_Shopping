@@ -72,7 +72,7 @@ public class ProductDAOIMPL implements ProductDAO {
 	@Override
 	public ProductDTO getProduct(int productId) {
 		try {
-			return sessionFactory.getCurrentSession().get(ProductDTO.class,Integer.valueOf(productId));
+			return sessionFactory.getCurrentSession().get(ProductDTO.class,productId);
 			}catch (Exception e)
 		{e.printStackTrace();
 		return null;

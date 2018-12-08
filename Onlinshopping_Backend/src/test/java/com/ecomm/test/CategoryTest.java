@@ -1,6 +1,7 @@
 package com.ecomm.test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.ecomm.DAO.CategoryDAO;
 import com.ecomm.DTO.CategoryDTO;
 
-public class CategoryDAOTest {
+public class CategoryTest {
 
 static CategoryDAO categoryDAO;
 private static AnnotationConfigApplicationContext context;
@@ -24,38 +25,47 @@ private static AnnotationConfigApplicationContext context;
 	 context.scan("com.ecomm");
 	context.refresh();
 	//context.close();
+	categoryDAO=(CategoryDAO)context.getBean("categoryDAO");
+
 	}
 
 @Ignore
 @Test
-	public void addTest() {
+	public void add() {
 	CategoryDTO category =new CategoryDTO();
-	category.setCategoryName("Television");
-	category.setCategoryDescription("Smart/LED T.V.");
+	category.setCategoryName("Mobile");
+	category.setCategoryDescription("Smart Mobile");
+	assertTrue("Fail to insert",categoryDAO.add(category));
 	}
 
 @Ignore
 @Test
-public void deleteTest() {
+public void delete() {
 	CategoryDTO category = categoryDAO.getCategory(0);
 	assertEquals("Successfully deleted the single category from the table!",true,categoryDAO.delete(category));
 	
 }
 
-@Ignore
+//@Ignore
 @Test
-public void updateTest() {
-	CategoryDTO category = categoryDAO.getCategory(0);
-	category.setCategoryName("Moblie");
-	category.setCategoryDescription("Smart Mobile");
+public void update() {
+	CategoryDTO category = categoryDAO.getCategory(1);
+	category.setCategoryName("Television");
+	category.setCategoryDescription("Smart Television");
 	assertEquals("Successfully update the single category in the table!",true,categoryDAO.update(category));
 }
 
-//@Ignore
+@Ignore
 @Test
-public void testList() {
+public void list() {
 	List<CategoryDTO> list=categoryDAO.listCategories();
 	assertEquals("Failed to get the list!",1,list.size());
 
+}
+@Ignore
+@Test
+public void get() {
+	CategoryDTO category = categoryDAO.getCategory(1);
+	assertEquals("Successfully fetched a single category from the table!","Television",category.getCategoryName());
 }
 }

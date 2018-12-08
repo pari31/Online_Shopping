@@ -1,14 +1,15 @@
 package com.ecomm.DTO;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+@Entity
 public class SupplierDTO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 private int SupplierId;
-	//@NotBlank(message="Please enter the supplier name!")
+	
 	private  String SupplierName;
 	public int getSupplierId() {
 		return SupplierId;
@@ -28,7 +29,7 @@ private int SupplierId;
 	public void setSupplierDescription(String supplierDescription) {
 		SupplierDescription = supplierDescription;
 	}
-	//@NotBlank(message="Please enter the supplier description!")
+	
 	private String  SupplierDescription;
 
 }
