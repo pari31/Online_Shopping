@@ -29,27 +29,27 @@ private static AnnotationConfigApplicationContext context;
 
 	}
 
-@Ignore
+//@Ignore
 @Test
 	public void add() {
 	CategoryDTO category =new CategoryDTO();
-	category.setCategoryName("Mobile");
-	category.setCategoryDescription("Smart Mobile");
+	category.setCategoryName("Appliances");
+	category.setCategoryDescription("Television,Refrigerators,AC etc.");
 	assertTrue("Fail to insert",categoryDAO.add(category));
 	}
 
 @Ignore
 @Test
 public void delete() {
-	CategoryDTO category = categoryDAO.getCategory(0);
+	CategoryDTO category = categoryDAO.getCategory(1);
 	assertEquals("Successfully deleted the single category from the table!",true,categoryDAO.delete(category));
 	
 }
 
-//@Ignore
+@Ignore
 @Test
 public void update() {
-	CategoryDTO category = categoryDAO.getCategory(1);
+	CategoryDTO category = categoryDAO.getCategory(2);
 	category.setCategoryName("Television");
 	category.setCategoryDescription("Smart Television");
 	assertEquals("Successfully update the single category in the table!",true,categoryDAO.update(category));
