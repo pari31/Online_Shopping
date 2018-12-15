@@ -10,9 +10,13 @@
 	">
 
 	<!-- Adding base package for scan -->
-	<context:component-scan base-package="com.ecomm.Onlineshopping_Frontend"/>
-
-<!-- Loading static resources -->
+	
+	<!-- <context:component-scan base-package="com.ecomm.Onlineshopping_Frontend.controller" /> -->
+	<context:component-scan base-package="com.ecomm" />
+			
+	
+	
+	<!-- Loading static resources -->
 
 	<mvc:annotation-driven />
 	<mvc:resources location="/assets/" mapping="/resources/**" />
@@ -25,5 +29,5 @@
 
 	</bean>
 
-	
+
 </beans> 

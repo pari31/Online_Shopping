@@ -1,11 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<spring:url var="css" value="/resources/css" />
-<spring:url var="js" value="/resources/js" />
-<spring:url var="images" value="/resources/images" />
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:set var="css" value="resources/css"/>
+<c:set var="js" value="resources/js"/>
+<c:set var="images" value="resources/images"/>
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
@@ -29,14 +27,14 @@
 	window.contextRoot = '${contextRoot}';
 </script>
 
-<!-- Bootstrap Core CSS -->
+<!-- Bootstrap v3.3.7 Core CSS -->
 <link href="${css}/bootstrap.css" rel="stylesheet">
 
-<!-- Bootstrap Cyborg theme-->
+<!-- Bootstrap v3.3.7 Cyborg theme-->
 <link href="${css}/bootstrap-cyborg-theme.css" rel="stylesheet">
 
 <!--Bootstrap DataTables -->
-<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
+<%-- <link href="${css}/dataTables.bootstrap4.css" rel="stylesheet"> --%>
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -70,7 +68,7 @@
 				<%@include file="contact.jsp"%>
 			</c:if>
 
-			<!-- Loading only when user click All Products-->
+			<!-- Loading only when user click All Products or CategoryProducts-->
 			<c:if
 				test="${userClickAllProducts==true or userClickCategoryProducts==true}">
 				<%@include file="listProducts.jsp"%>
@@ -86,12 +84,13 @@
 
 
 	<!-- DataTable Bootstarp script -->
-	<script src="${js}/dataTables.bootstrap.js"></script>
+	<%-- <script src="${js}/dataTables.bootstrap.js"></script> --%>
 
 	<!--Linking myapp.js to page.jsp  -->
 	<script src="${js}/myapp.js"></script>
-	<script src="${js}/bootstrap.min.js"></script>
-	</div>
+	<!-- Bootstrap v3.3.7 js -->
+	<script src="${js}/bootstrap.js"></script>
+	
 </body>
 
 </html>

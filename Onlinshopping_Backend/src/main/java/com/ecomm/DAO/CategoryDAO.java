@@ -6,15 +6,14 @@ import com.ecomm.DTO.CategoryDTO;
 
 public interface CategoryDAO {
 
+	public List<CategoryDTO> list();
+
 	public boolean add(CategoryDTO category);
 
 	public boolean delete(CategoryDTO category);
 
 	public boolean update(CategoryDTO category);
 
-	public List<CategoryDTO> listCategories();
+	public CategoryDTO get(int CategoryId);
 
-	public CategoryDTO getCategory(int CategoryId);
-
-	
 }

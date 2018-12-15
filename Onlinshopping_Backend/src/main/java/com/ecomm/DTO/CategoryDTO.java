@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class CategoryDTO {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CategoryId;
 	public int getCategoryId() {
 		return CategoryId;
@@ -30,6 +30,13 @@ public class CategoryDTO {
 	}
 	private String CategoryName;
 	private String CategoryDescription;
+	private String imageURL;
+	public String getImageURL() {
+		return imageURL;
+	}
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
 	private boolean active = true;
 	public boolean isActive() {
 		return active;

@@ -1,4 +1,4 @@
-package com.ecomm.test;
+/*package com.ecomm.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -58,7 +58,7 @@ public void update() {
 @Ignore
 @Test
 public void list() {
-	List<CategoryDTO> list=categoryDAO.listCategories();
+	List<CategoryDTO> list=categoryDAO.list();
 	assertEquals("Failed to get the list!",1,list.size());
 
 }
@@ -69,3 +69,4 @@ public void get() {
 	assertEquals("Successfully fetched a single category from the table!","Television",category.getCategoryName());
 }
 }
+*/
