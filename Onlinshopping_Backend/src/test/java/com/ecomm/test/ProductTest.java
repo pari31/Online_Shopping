@@ -26,11 +26,11 @@ public class ProductTest {
 		context.refresh();
 		// context.close();
 
-		productDAO = (ProductDAO) context.getBean("productDAO");
+		productDAO = (ProductDAO)context.getBean("productDAO");
 	}
 
 	/* Creating Product */
-	@Ignore
+	//@Ignore
 	@Test
 	public void addProductTest() {
 		ProductDTO product = new ProductDTO();
@@ -39,6 +39,9 @@ public class ProductTest {
 		product.setProductDescription("Honor 9N 4G.B.RAM and 128 G.B. Rom");
 		product.setUnitPrice(15000);
 		product.setProductQuantity(5);
+		product.setActive(true);
+		product.setCategoryId(2);
+		product.setSupplierId(1001);
 		assertTrue("Failed to add product !", productDAO.add(product));
 	}
 

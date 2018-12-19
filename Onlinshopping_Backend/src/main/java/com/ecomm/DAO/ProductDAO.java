@@ -14,5 +14,11 @@ public interface ProductDAO {
 	public List<ProductDTO> listProducts();
 
 	public ProductDTO getProduct(int productId);
+	
+	// Business Methods
+
+	List<ProductDTO> listActiveProducts();
+	List<ProductDTO> listActiveProductsByCategory(int CategoryId);
+	List<ProductDTO> getLatestActiveProducts(int count);
 
 }

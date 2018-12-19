@@ -1,4 +1,4 @@
-/*package com.ecomm.test;
+ package com.ecomm.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -33,40 +33,44 @@ private static AnnotationConfigApplicationContext context;
 @Test
 	public void add() {
 	CategoryDTO category =new CategoryDTO();
-	category.setCategoryName("Appliances");
-	category.setCategoryDescription("Television,Refrigerators,AC etc.");
+	category.setCategoryName("Laptop");
+	category.setCategoryDescription("i3,i5,i7,i9");
+	category.setImageURL("Cat3.png");
+	/*category.setActive(true);*/
 	assertTrue("Fail to insert",categoryDAO.add(category));
-	}
+		}
 
 @Ignore
 @Test
 public void delete() {
-	CategoryDTO category = categoryDAO.getCategory(1);
-	assertEquals("Successfully deleted the single category from the table!",true,categoryDAO.delete(category));
+	CategoryDTO category = categoryDAO.get(5);
+	assertEquals("Successfully deleted the single category from the table!","TV",categoryDAO.delete(category));
 	
 }
 
 @Ignore
 @Test
 public void update() {
-	CategoryDTO category = categoryDAO.getCategory(2);
+	CategoryDTO category = categoryDAO.get(2);
 	category.setCategoryName("Television");
 	category.setCategoryDescription("Smart Television");
 	assertEquals("Successfully update the single category in the table!",true,categoryDAO.update(category));
+	
 }
 
 @Ignore
 @Test
 public void list() {
 	List<CategoryDTO> list=categoryDAO.list();
-	assertEquals("Failed to get the list!",1,list.size());
+	assertEquals("Successfully fetched the list of 3 category from the table!",3,categoryDAO.list().size());
 
 }
 @Ignore
 @Test
 public void get() {
-	CategoryDTO category = categoryDAO.getCategory(1);
+	CategoryDTO category = categoryDAO.get(1);
 	assertEquals("Successfully fetched a single category from the table!","Television",category.getCategoryName());
 }
-}
-*/
+
+	}
+

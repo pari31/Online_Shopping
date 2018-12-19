@@ -14,8 +14,8 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
-@ComponentScan(basePackages={ "com.ecomm"})
+@Configuration // Tells we are doing certain configuration and creating certain beans that should be managed by our spring framework
+@ComponentScan(basePackages={ "com.ecomm"}) //Tells where entity classes resides that Hibernate requires.
 @EnableTransactionManagement
 public class DBConfig {
 
@@ -28,7 +28,7 @@ public class DBConfig {
 	// Step1:Creating H2 DataSource Bean is an instance of defined function which
 	// can be called by its name
 
-	@Bean(name = "dataSource")
+	@Bean(name = "dataSource") //Providing the connection information of the database
 	public DataSource getH2DataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
@@ -44,7 +44,7 @@ public class DBConfig {
 	// Step2:Bean creation of sessionFactory which is to be linked by @Autowired and
 	// object name(sessionFactory)
 
-	@Bean(name = "sessioFactory")
+	@Bean(name = "sessioFactory") //Configures application to use Hibernate and create a session object
 	public SessionFactory getSessionFactory(DataSource dataSource) {
 		LocalSessionFactoryBuilder lsfb = new LocalSessionFactoryBuilder(dataSource);
 		// lsfb.addAnnotatedClass(Category.class);

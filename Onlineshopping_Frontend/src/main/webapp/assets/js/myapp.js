@@ -17,9 +17,10 @@ $(function() {
 		$('#listProducts').addClass('active');
 		break;
 	default:
-		$('#listProducts').addClass('active');
+		if(menu == "home") break; // To stop highlighting the ViewProducts
+		/*$('#listProducts').addClass('active');
 		$('#a_' + menu).addclass('active');
-		break;
+		break;*/
 
 	}
 });

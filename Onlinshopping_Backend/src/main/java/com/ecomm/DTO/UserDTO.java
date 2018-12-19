@@ -12,10 +12,47 @@ public class UserDTO {
 	private int UserId;
 	private String FirstName;
 	private String LastName;
+	private String Role;
 	private String Email;
 	private String ContactNumber;
+	private String Password;
+	private boolean enabled;
+	private String ConfirmPassword;
+	
+	public CartDTO cartDTO;
 	
 	
+	
+	public CartDTO getCartDTO() {
+		return cartDTO;
+	}
+	public void setCartDTO(CartDTO cartDTO) {
+		this.cartDTO = cartDTO;
+	}
+	public String getRole() {
+		return Role;
+	}
+	public void setRole(String role) {
+		Role = role;
+	}
+	public String getPassword() {
+		return Password;
+	}
+	public void setPassword(String password) {
+		Password = password;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	public String getConfirmPassword() {
+		return ConfirmPassword;
+	}
+	public void setConfirmPassword(String confirmPassword) {
+		ConfirmPassword = confirmPassword;
+	}
 	public int getUserId() {
 		return UserId;
 	}

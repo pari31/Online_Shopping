@@ -25,15 +25,16 @@ public class SupplierTest {
 		context.scan("com.ecomm");
 		context.refresh();
 		// context.close();
-		supplierDAO = (SupplierDAO) context.getBean("supplierDAO");
+		supplierDAO = (SupplierDAO)context.getBean("supplierDAO");
 	}
 
 	//@Ignore
 	@Test
 	public void add() {
 		SupplierDTO supplier = new SupplierDTO();
-		supplier.setSupplierName("Initiative DataSystems");
-		supplier.setSupplierDescription("Dealer of new age electronic gadgets");
+		supplier.setSupplierId(1001);
+		supplier.setSupplierName("Initiative DataSystems Pvt.Ltd.");
+		supplier.setSupplierDescription("9D,Singar Nagar,Alambagh,Lucknow,226005");
 		assertTrue("Failed to insert the Supplier data!", supplierDAO.add(supplier));
 	}
 
